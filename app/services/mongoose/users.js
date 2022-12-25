@@ -4,6 +4,7 @@ const { BadRequest } = require('../../errors/');
 
 const createOrganizer = async (req) => {
   const { organizer, role, name, email, password, confirmPassword } = req.body;
+  console.log(req.body);
 
   if (password !== confirmPassword) {
     throw new BadRequest('Passwords do not match');

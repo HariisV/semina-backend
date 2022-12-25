@@ -9,6 +9,11 @@ let categorySchema = Schema(
       maxLength: [20, 'Panjang Maksimal 20 Karakter'],
       required: [true, 'Nama Harus Diisi'],
     },
+    organizer: {
+      type: mongoose.Types.ObjectId,
+      ref: 'Organizer',
+      required: [true, 'Organizer is required'],
+    },
   },
   {
     timestamps: true,

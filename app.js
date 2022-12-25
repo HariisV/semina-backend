@@ -19,6 +19,7 @@ const imagesRouter = require('./app/api/v1/images/router');
 const talentRouter = require('./app/api/v1/talents/router');
 const eventRouter = require('./app/api/v1/events/router');
 const organizerRouter = require('./app/api/v1/organizer/router');
+const authRouter = require('./app/api/v1/auth/router');
 
 app.use(cors());
 app.use(logger('dev'));
@@ -32,6 +33,7 @@ app.use(`${v1}/images`, imagesRouter);
 app.use(`${v1}/talents`, talentRouter);
 app.use(`${v1}/events`, eventRouter);
 app.use(`${v1}/organizer`, organizerRouter);
+app.use(`${v1}/auth`, authRouter);
 
 app.use(notFoundMiddleware);
 app.use(handleErrorMiddleware);
